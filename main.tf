@@ -14,7 +14,7 @@ resource "aws_instance" "ec2" {
 
 # Additional 8 GB EBS Volume
 resource "aws_ebs_volume" "myebs" {
- availability_zone = aws_instance.myec2.availability_zone"
+ availability_zone = aws_instance.ec2.availability_zone"
   size              = var.ebs_size
   type              = "gp3"
 
