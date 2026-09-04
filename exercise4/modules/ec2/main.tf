@@ -8,6 +8,11 @@ resource "aws_instance" "myec2" {
 
   availability_zone = var.availability_zone
 
+    user_data = file("${path.module}/website.sh")
+
+      user_data_replace_on_change = true
+
+
   tags = {
     Name = "${var.instance_name}-${var.environment}"
     Environment = var.environment
